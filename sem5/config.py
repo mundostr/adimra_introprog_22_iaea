@@ -1,0 +1,3 @@
+MIN = 0
+MAX = 100
+UNA_TERCER_OPCION = "Pepe"
