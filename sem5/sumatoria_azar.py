@@ -1,3 +1,9 @@
+"""
+1) Solicitar por consola la cantidad de números al azar a generar, y el límite desde el cual comienzan a sumarse.
+2) Generar cada número y verificar si corresponde agregarlo a la sumatoria.
+"""
+
+
 # Librerías
 import random as azar
 
