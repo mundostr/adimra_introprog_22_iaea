@@ -4,7 +4,12 @@
 """
 
 
-# Librerías
+# Opciones de importación de librerías
+# import random
+# import random as azar
+# from random import randint
+# from random import randint as azar
+
 import random as azar
 
 
@@ -29,7 +34,9 @@ while (limite == 0 or limite > LIMITE_AZAR):
 suma_total = 0
 for c in range(nro):
     valor_al_azar = azar.randint(1, LIMITE_AZAR)
+    
     print(valor_al_azar)
+    
     if (valor_al_azar > limite):
         suma_total = suma_total + valor_al_azar
 
