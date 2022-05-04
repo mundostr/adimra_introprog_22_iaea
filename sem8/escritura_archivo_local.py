@@ -18,12 +18,21 @@ a = append (escritura, añade al contenido)
 
 
 RUTA = "sem8/contenido_escritura.txt"
-contenido = "Este es el contenido que se escribirá en el archivo local\nEsta es otra línea\n"
+RUTA_CSV = "sem8/contenido_escritura.csv"
+contenido = "Este es el 2do contenido que se escribirá en el archivo local\nEsta es otra línea\n"
+
+contenido_csv = ""
+lista_lecturas = [23.2, 24.5, 25.0, 26.2, 22.2]
+for item in lista_lecturas:
+    contenido_csv = contenido_csv + str(item) + ","
 
 
 archivo = open(RUTA, "w", encoding="UTF-8") # handler / UTF-8 = Unicode, códigos internacionales acentos, eñe, etc
 archivo.write(contenido)
 archivo.close()
+print("El archivo TXT fue grabado correctamente")
 
-
-print("El archivo fue grabado correctamente")
+archivo = open(RUTA_CSV, "w", encoding="UTF-8") # handler / UTF-8 = Unicode, códigos internacionales acentos, eñe, etc
+archivo.write(contenido_csv)
+archivo.close()
+print("El archivo CSV fue grabado correctamente")
