@@ -1,0 +1,3 @@
+Este es simplemente un contenido para verificar la apertura del archivo.
+
+Esta es otra línea en el archivo.
