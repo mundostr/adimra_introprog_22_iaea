@@ -7,9 +7,6 @@ CTD_TENSORES = 3 # unidades
 PI = 3.1415926
 
 
-formato_parcela = ""
-
-
 def verificar_formato_parcela():
     entrada = "N"
     while(entrada != "C" and entrada != "c" and entrada != "R" and entrada != "r"):
@@ -51,37 +48,40 @@ def main():
     formato_parcela = verificar_formato_parcela()
     perimetro = calcular_perimetro(formato_parcela)
     separacion_postes = solicitar_separacion_postes()
-    print(calcular_tejido(perimetro, separacion_postes))
+    datos = calcular_tejido(perimetro, separacion_postes)
+    print(datos["tejido"])
+    print(datos["alambre"])
+    print(datos["postes"])
 
 
-def main2():
-    global entrada, formato_parcela
+# def main2():
+#     global entrada, formato_parcela
     
-    perimetro = 0 # variable local
+#     perimetro = 0 # variable local
 
-    while(entrada != "C" and entrada != "c" and entrada != "R" and entrada != "r"):
-        entrada = input("Formato de la parcela ([C]circular / [R]rectangular): ")
+#     while(entrada != "C" and entrada != "c" and entrada != "R" and entrada != "r"):
+#         entrada = input("Formato de la parcela ([C]circular / [R]rectangular): ")
     
-    formato_parcela = entrada.upper()
+#     formato_parcela = entrada.upper()
 
-    if(formato_parcela == "C"):
-        ingreso = input("Indicar radio parcela (mts): ")
-        perimetro = 2 * PI * float(ingreso)
-    else:
-        largo = int(input("Indicar largo parcela (mts): "))
-        ancho = int(input("Indicar ancho parcela (mts): "))
-        perimetro = 2 * (largo + ancho)
+#     if(formato_parcela == "C"):
+#         ingreso = input("Indicar radio parcela (mts): ")
+#         perimetro = 2 * PI * float(ingreso)
+#     else:
+#         largo = int(input("Indicar largo parcela (mts): "))
+#         ancho = int(input("Indicar ancho parcela (mts): "))
+#         perimetro = 2 * (largo + ancho)
     
-    separacion_postes = int(input("Indicar separacion entre postes (mts): "))
+#     separacion_postes = int(input("Indicar separacion entre postes (mts): "))
     
-    mtrs_tejido = math.ceil(perimetro + (perimetro * DESPERDICIO_TEJIDO / 100))
-    mtrs_alambre = math.ceil(perimetro * CTD_TENSORES + (perimetro * DESPERDICIO_ALAMBRE / 100))
-    cantidad_postes_neta = math.ceil(perimetro / separacion_postes)
-    cantidad_postes_real = math.ceil(cantidad_postes_neta + (cantidad_postes_neta * ROTURAS_POSTES / 100))
+#     mtrs_tejido = math.ceil(perimetro + (perimetro * DESPERDICIO_TEJIDO / 100))
+#     mtrs_alambre = math.ceil(perimetro * CTD_TENSORES + (perimetro * DESPERDICIO_ALAMBRE / 100))
+#     cantidad_postes_neta = math.ceil(perimetro / separacion_postes)
+#     cantidad_postes_real = math.ceil(cantidad_postes_neta + (cantidad_postes_neta * ROTURAS_POSTES / 100))
 
-    print(mtrs_tejido)
-    print(mtrs_alambre)
-    print(cantidad_postes_real)
+#     print(mtrs_tejido)
+#     print(mtrs_alambre)
+#     print(cantidad_postes_real)
 
 
 if (__name__ == "__main__"):
