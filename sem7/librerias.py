@@ -1,6 +1,8 @@
 # El comando import, nos permite importar ya sea de forma parcial o completa una librería disponible en el sistema
 import random
 
+# from random import randint
+
 CTD_NUMEROS = 5
 
 sumatoria = 0
