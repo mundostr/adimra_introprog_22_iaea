@@ -17,8 +17,8 @@ def calcular_perimetro(formato):
 
 	print("________________")
 	if(formato == "C"):
-		ingreso = input("Indicar radio parcela (mts): ")
-		perimetro = 2 * PI * float(ingreso)
+		radio = input("Indicar radio parcela (mts): ")
+		perimetro = 2 * PI * float(radio)
 	else:
 		largo = int(input("Indicar largo parcela (mts): "))
 		ancho = int(input("Indicar ancho parcela (mts): "))
@@ -37,8 +37,18 @@ def calcular_tejido(per, sp):
 	ctd_postes_real = math.ceil(ctd_postes_neta + (ctd_postes_neta * ROTURAS_POSTES / 100))
    
 	calculos = { "tejido": mts_tejido, "alambre": mts_alambre, "postes": ctd_postes_real }
+	# calculos = [ mts_tejido, mts_alambre, ctd_postes_real ]
 	
 	return calculos
+
+def mostrar_resultados_consola(datos):
+	print()
+	print("________________")
+	print("RESUMEN CALCULOS TEJIDO PERIMETRAL")
+	print(f"Tejido: {datos['tejido']} mts")
+	print(f"Alambre: {datos['alambre']} mts")
+	print(f"Postes: {datos['postes']}")
+	print("________________")
 
 
 def main():
@@ -46,8 +56,7 @@ def main():
 	perimetro = calcular_perimetro(formato)
 	separacion_postes = solicitar_separacion_postes()
 	datos = calcular_tejido(perimetro, separacion_postes)
-
-	print(datos)
+	mostrar_resultados_consola(datos)
 
 
 if (__name__ == "__main__"):
