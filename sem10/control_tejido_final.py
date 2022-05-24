@@ -12,11 +12,11 @@ def verificar_formato_parcela():
 	
 	return entrada.upper()
 
-def calcular_perimetro(formato):
+def calcular_perimetro(frm):
 	perimetro = 0
 
 	print("________________")
-	if(formato == "C"):
+	if(frm == "C"):
 		radio = input("Indicar radio parcela (mts): ")
 		perimetro = 2 * PI * float(radio)
 	else:
