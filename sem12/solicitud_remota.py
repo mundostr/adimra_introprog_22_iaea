@@ -21,6 +21,8 @@ IDIOMA = "es"
 
 URL = f"https://api.openweathermap.org/data/2.5/weather2?q={NOMBRE_CIUDAD}&units={UNIDADES}&appid={APPID}&lang={IDIOMA}"
 
+print(URL)
+
 
 def solicitar_datos_clima(ruta):
     proceso = requests.get(ruta)

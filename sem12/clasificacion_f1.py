@@ -1,4 +1,4 @@
-import json
+from json import dumps
 
 import requests
 
@@ -7,8 +7,8 @@ RUTA_REMOTA = "https://ergast.com/api/f1/2022/driverStandings.json"
 
 
 def guardar_backup_local(ruta, contenido):
-	with open(ruta, "w", encoding="UTF-8") as archivo:
-		archivo.write(json.dumps(contenido))
+	with open(ruta, "w", encoding="UTF-8") as archivo: ## trunca el contenido
+		archivo.write(dumps(contenido))
 	print("Backup local guardado")
 
 def recuperar_clasificacion_remota(ruta):
@@ -21,7 +21,6 @@ def recuperar_clasificacion_remota(ruta):
 
 def main():
 	clasificacion = recuperar_clasificacion_remota(RUTA_REMOTA)
-	## guardar_backup_local(RUTA_LOCAL, json.dumps(clasificacion))
 	guardar_backup_local(RUTA_LOCAL, clasificacion)
 
 
