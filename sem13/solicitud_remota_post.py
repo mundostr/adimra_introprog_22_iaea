@@ -6,6 +6,8 @@ Endpoint carga lectura: http://pad19.com:3030/cargar_sensor
 """
 
 
+import time
+
 import requests
 
 PROTOCOLO = "http"
@@ -13,6 +15,7 @@ HOST = "pad19.com"
 PUERTO = "3030"
 ENDPOINT = "cargar_sensor"
 URL_API = f"{PROTOCOLO}://{HOST}:{PUERTO}/{ENDPOINT}"
+ESPERA = 600 # segs = 10 mins
 
 
 def enviar_datos_sensor(parametros):
@@ -25,11 +28,16 @@ def enviar_datos_sensor(parametros):
 
 
 def main():
-    carga = enviar_datos_sensor({ "sensor": 33, "valor": 20.9 })
-    if (carga == False):
-        print("Error al cargar el sensor")
-    else:
-        print(carga)
+	while(True):
+		carga = enviar_datos_sensor({ "sensor": 33, "valor": 19.5 })
+		
+		if (carga == False):
+			print("Error al cargar el sensor")
+		else:
+			print(carga)
+		
+		print("Espera")
+		time.sleep(ESPERA)
 
 
 if (__name__ == "__main__"):
