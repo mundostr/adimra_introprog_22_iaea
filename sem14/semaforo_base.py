@@ -20,6 +20,8 @@ def ciclar_semaforo(luces):
 def setear_luces(modo):
 	if (modo == "normal"):
 		return funcy.omit(LUCES, "apagada")
+	elif (modo == "bloqueado"):
+		return funcy.omit(LUCES, "verde, amarilla, apagada")
 	else:
 		return funcy.omit(LUCES, "verde, roja")
 
@@ -30,11 +32,11 @@ def setear_ciclo(modo):
 		return CICLO_INTERMITENTE
 
 def main():
-	modo = "normal"
-	luces = setear_luces(modo)
+	# modo = "normal"
+	# luces = setear_luces(modo)
 
-	while(True):
-		ciclar_semaforo(luces)
+	# while(True):
+	# 	ciclar_semaforo(luces)
 
 
 if (__name__ == "__main__"):
