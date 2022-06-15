@@ -37,7 +37,7 @@ def main():
 	luces = setear_luces(modo)
 
 	while(True):
-		# ciclar_semaforo(luces)
+		ciclar_semaforo(luces)
 
 		if (keyboard.is_pressed('n')):
 			print("Modo normal")
