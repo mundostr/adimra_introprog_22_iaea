@@ -15,7 +15,7 @@ HOST = "pad19.com"
 PUERTO = "3030"
 ENDPOINT = "cargar_sensor"
 URL_API = f"{PROTOCOLO}://{HOST}:{PUERTO}/{ENDPOINT}"
-ESPERA = 600 # segs = 10 mins
+ESPERA = 60 # segs = 1 min
 
 
 def enviar_datos_sensor(parametros):
@@ -36,7 +36,6 @@ def main():
 		else:
 			print(carga)
 		
-		print("Espera")
 		time.sleep(ESPERA)
 
 
