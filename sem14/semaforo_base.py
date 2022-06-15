@@ -1,6 +1,7 @@
 import time
 
 import funcy
+import keyboard
 
 LUCES = {
 	"verde": { "codigo": f"\x1b[0;30;42m{' ':24}\x1b[0m", "demora": 3 },
@@ -32,11 +33,20 @@ def setear_ciclo(modo):
 		return CICLO_INTERMITENTE
 
 def main():
-	# modo = "normal"
-	# luces = setear_luces(modo)
+	modo = "normal"
+	luces = setear_luces(modo)
 
-	# while(True):
-	# 	ciclar_semaforo(luces)
+	while(True):
+		# ciclar_semaforo(luces)
+
+		if (keyboard.is_pressed('n')):
+			print("Modo normal")
+		
+		elif (keyboard.is_pressed('i')):
+			print("Modo intermitente")
+		
+		elif (keyboard.is_pressed('b')):
+			print("Modo bloqueado")
 
 
 if (__name__ == "__main__"):
