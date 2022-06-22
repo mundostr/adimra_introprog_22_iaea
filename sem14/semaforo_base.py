@@ -26,27 +26,12 @@ def setear_luces(modo):
 	else:
 		return funcy.omit(LUCES, "verde, roja")
 
-def setear_ciclo(modo):
-	if (modo == "normal"):
-		return CICLO_NORMAL
-	else:
-		return CICLO_INTERMITENTE
-
 def main():
 	modo = "normal"
 	luces = setear_luces(modo)
 
 	while(True):
 		ciclar_semaforo(luces)
-
-		if (keyboard.is_pressed('n')):
-			print("Modo normal")
-		
-		elif (keyboard.is_pressed('i')):
-			print("Modo intermitente")
-		
-		elif (keyboard.is_pressed('b')):
-			print("Modo bloqueado")
 
 
 if (__name__ == "__main__"):
