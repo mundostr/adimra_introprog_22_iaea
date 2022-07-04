@@ -20,6 +20,9 @@ if (__name__ == "__main__"):
 		# Notar el uso del placeholder %s para el id de sensor
 		CONSULTA = "select sensores.nombre, lecturas.media from sensores, lecturas where sensores.id = lecturas.id_sensor and sensores.id = %s order by sensores.id asc"
 		
+		# La consulta no solo acepta un SQL plano, también puede contener un llamado a un procedimiento o función almacenada en la base de datos
+		# CONSULTA = "call getReadingsSensor(%s)"
+		
 		conexion = conectar_mysql()
 		gestor = conexion.cursor()
 		# Si se utilizan las formas 1 o 2, el execute solo recibe el parámetro de la consulta
